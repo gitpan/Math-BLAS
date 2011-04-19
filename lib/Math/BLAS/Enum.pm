@@ -15,7 +15,7 @@ use Exporter qw(import);
 
 BEGIN
 {
-  our $VERSION = '1.00';
+  our $VERSION = '1.01';
   our @EXPORT = ();
   our @EXPORT_OK = ();
   our %EXPORT_TAGS = ();
@@ -218,6 +218,8 @@ sub BLAS_UNASSEMBLED () { 274 }
 __END__
 
 =pod
+
+=encoding utf8
 
 =head1 NAME
 

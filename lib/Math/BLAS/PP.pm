@@ -19,7 +19,7 @@ use Math::BLAS::Enum;
 
 BEGIN
 {
-  our $VERSION = '1.00';
+  our $VERSION = '1.01';
   our @EXPORT = qw(dot_d
 		   norm_d
 		   sum_d
@@ -804,5 +804,147 @@ sub gemm_d ($$$$$$$$$$$$$$$$)
 }
 
 1;
+
+__END__
+
+=pod
+
+=encoding utf8
+
+=head1 NAME
+
+Math::BLAS::PP - pure Perl BLAS
+
+
+=head1 SYNOPSIS
+
+    use Math::BLAS::PP;
+
+
+=head1 DESCRIPTION
+
+Don't use this yourself.
+
+
+=head2 Reduction Operations
+
+=over
+
+=item C<dot_d> (I<n>, I<alpha>, I<x>, I<x_ind>, I<x_incr>, I<y>, I<y_ind>, I<y_incr>, I<beta>, I<r>, I<r_ind>)
+
+Dot product.
+
+
+=item C<norm_d> (I<norm>, I<n>, I<x>, I<x_ind>, I<x_incr>)
+
+Vector norms.
+
+
+=item C<sum_d> (I<n>, I<x>, I<x_ind>, I<x_incr>)
+
+Sum of vector elements.
+
+
+=item C<min_val_d> (I<n>, I<x>, I<x_ind>, I<x_incr>)
+
+Minimum value and location.
+
+
+=item C<amin_val_d> (I<n>, I<x>, I<x_ind>, I<x_incr>)
+
+Minimum absolute value and location.
+
+
+=item C<max_val_d> (I<n>, I<x>, I<x_ind>, I<x_incr>)
+
+Maximum value and location.
+
+
+=item C<amax_val_d> (I<n>, I<x>, I<x_ind>, I<x_incr>)
+
+Maximum absolute value and location.
+
+
+=item C<sumsq_d> (I<n>, I<x>, I<x_ind>, I<x_incr>, I<sumsq>, I<scale>)
+
+Sum of squares.
+
+=back
+
+
+=head2 Vector Operations
+
+=over
+
+=item C<scale_d> (I<n>, I<alpha>, I<x>, I<x_ind>, I<x_incr>)
+
+Scale.
+
+
+=item C<rscale_d> (I<n>, I<alpha>, I<x>, I<x_ind>, I<x_incr>)
+
+Reciprocal scale.
+
+
+=item C<axpby_d> (I<n>, I<alpha>, I<x>, I<x_ind>, I<x_incr>, I<beta>, I<y>, I<y_ind>, I<y_incr>)
+
+Scaled vector accumulation.
+
+
+=item C<waxpby_d> (I<n>, I<alpha>, I<x>, I<x_ind>, I<x_incr>, I<beta>, I<y>, I<y_ind>, I<y_incr>, I<w>, I<w_ind>, I<w_incr>)
+
+Scaled vector addition.
+
+=back
+
+
+=head2 Data Movement with Vectors
+
+=over
+
+=item C<copy_d> (I<n>, I<x>, I<x_ind>, I<x_incr>, I<y>, I<y_ind>, I<y_incr>)
+
+Copy vector elements.
+
+
+=item C<swap_d> (I<n>, I<x>, I<x_ind>, I<x_incr>, I<y>, I<y_ind>, I<y_incr>)
+
+Interchange vector elements.
+
+=back
+
+
+=head2 Matrix/Vector Operations
+
+=over
+
+=item C<gemv_d> (I<a_op>, I<m>, I<n>, I<alpha>, I<a>, I<a_ind>, I<a_incr>, I<x>, I<x_ind>, I<x_incr>, I<beta>, I<y>, I<y_ind>, I<y_incr>)
+
+General matrix/vector multiplication.
+
+=back
+
+
+=head2 Matrix/Matrix Operations
+
+=over
+
+=item C<gemm_d> (I<a_op>, I<b_op>, I<m>, I<n>, I<k>, I<alpha>, I<a>, I<a_ind>, I<a_incr>, I<b>, I<b_ind>, I<b_incr>, I<beta>, I<c>, I<c_ind>, I<c_incr>)
+
+General matrix/matrix multiplication.
+
+=back
+
+
+=head1 SEE ALSO
+
+Math::L<BLAS|Math::BLAS>
+
+
+=head1 AUTHOR
+
+Ralph Schleicher <rs@ralph-schleicher.de>
+
+=cut
 
 ## Math/BLAS/PP.pm ends here

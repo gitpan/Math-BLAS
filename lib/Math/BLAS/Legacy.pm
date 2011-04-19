@@ -18,7 +18,7 @@ use Math::BLAS::PP;
 
 BEGIN
 {
-  our $VERSION = '1.00';
+  our $VERSION = '1.01';
   our @EXPORT = ();
   our @EXPORT_OK = ();
   our %EXPORT_TAGS = ();
@@ -175,7 +175,7 @@ sub blas_dasum ($$$$)
 }
 
 # Return vector norm.
-sub blas_nrm2 ($$$$)
+sub blas_dnrm2 ($$$$)
 {
   my ($n, $x, $x_ind, $x_incr) = @_;
 
@@ -250,6 +250,8 @@ sub blas_dgemm ($$$$$$$$$$$$$$$$)
 __END__
 
 =pod
+
+=encoding utf8
 
 =head1 NAME
 
@@ -525,7 +527,7 @@ I<x>.
 =back
 
 
-=item C<blas_nrm2> (I<n>, I<x>, I<x_ind>, I<x_incr>)
+=item C<blas_dnrm2> (I<n>, I<x>, I<x_ind>, I<x_incr>)
 
 Return the two-norm (Euclidean norm) of a vector.
 
